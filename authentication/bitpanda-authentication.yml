@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/bitpanda-platform-openapi.yml
+docs: https://developers.bitpanda.com/platform/
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-Api-Key
+  description: Bitpanda API key. Generate one at https://web.bitpanda.com/my-account/apikey
+  sources:
+  - openapi/bitpanda-platform-openapi.yml
