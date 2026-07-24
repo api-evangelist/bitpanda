@@ -1,0 +1,54 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.bitpanda.com/platform/, github.com/bitpanda-labs/agent-skills api_reference.md
+api: openapi/bitpanda-platform-openapi.yml
+authentication:
+  style: api-key
+  header: X-Api-Key
+  scheme: Bitpanda API key on every request
+  ref: authentication/bitpanda-authentication.yml
+pagination:
+  style: cursor
+  params:
+  - before
+  - after
+  - page_size
+  ticker_params:
+  - cursor
+  - page_size
+  page_size:
+    default: 25
+    min: 1
+    max: 100
+    ticker_max: 500
+  response_fields:
+  - start_cursor
+  - end_cursor
+  - has_previous_page
+  - has_next_page
+  - next_cursor
+  note: >-
+    Page-based pagination (page/page_size) was deprecated and removed on 2 January 2024; all
+    endpoints are cursor-based.
+idempotency:
+  supported: false
+  note: >-
+    The Platform API is strictly read-only (GET only) — there are no state-changing operations,
+    so no idempotency-key contract applies. Write/order semantics live in the separate Bitpanda
+    Fusion trading API (not covered by this profile).
+versioning:
+  scheme: uri-path
+  current: v1
+  ref: lifecycle/bitpanda-lifecycle.yml
+error_envelope:
+  format: http-status
+  common_statuses:
+  - 200
+  - 401
+  - 404
+  - 500
+  ref: errors/bitpanda-problem-types.yml
+media_type: application/json
+data_scope: >-
+  All list endpoints span every asset type — crypto, fiat, stocks, ETFs, precious metals,
+  commodities, and crypto indices — in a single unified wallet/transaction model.

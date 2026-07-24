@@ -1,0 +1,20 @@
+{
+  "provider": "bitpanda",
+  "sources": [
+    "bitpanda-assets-api-openapi.yml",
+    "bitpanda-market-data-api-openapi.yml",
+    "bitpanda-transactions-api-openapi.yml",
+    "bitpanda-wallets-api-openapi.yml"
+  ],
+  "outputs": [
+    "bitpanda-assets-api-openapi.yml",
+    "bitpanda-market-data-api-openapi.yml",
+    "bitpanda-transactions-api-openapi.yml",
+    "bitpanda-wallets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

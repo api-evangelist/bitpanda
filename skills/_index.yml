@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/bitpanda-labs/agent-skills
+official: true
+note: >-
+  bitpanda-account.md is the official Bitpanda Labs Agent Skill (skills/bitpanda/SKILL.md),
+  saved verbatim. It follows the Agent Skills Open Standard (agentskills.io) and bundles a
+  read-only bash CLI over the Bitpanda Platform API.
+skills:
+- file: bitpanda-account.md
+  name: bitpanda
+  description: Query a Bitpanda account (portfolio, balances, trades, transactions, assets, prices) read-only via the Bitpanda API.
+  api: openapi/bitpanda-platform-openapi.yml
+  operations:
+  - listWallets
+  - listTransactions
+  - getAsset
+  - getTicker
+  license: Apache-2.0

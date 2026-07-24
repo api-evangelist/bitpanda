@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: github.com/bitpanda-labs, pkg.go.dev, Homebrew, PyPI
+note: >-
+  Bitpanda Labs ships first-party developer tools (a Go CLI, a Python MCP server, and an Agent
+  Skill) rather than traditional per-language client SDK libraries. Community SDKs exist on PyPI
+  (bitpanda-aio), crates.io/Elixir (veeso) etc. but are not first-party and are marked official:false.
+packages:
+- language: go
+  registry: pkg.go.dev
+  name: github.com/bitpanda-labs/bitpanda-cli
+  url: https://github.com/bitpanda-labs/bitpanda-cli
+  install: go install github.com/bitpanda-labs/bitpanda-cli/cmd/bp@latest
+  official: true
+  kind: cli
+- language: go
+  registry: homebrew
+  name: bitpanda-labs/tap/bp
+  url: https://github.com/bitpanda-labs/homebrew-tap
+  install: brew install bitpanda-labs/tap/bp
+  official: true
+  kind: cli
+- language: python
+  registry: git
+  name: bitpanda-mcp
+  url: https://github.com/bitpanda-labs/bitpanda-mcp
+  install: uvx --from git+https://github.com/bitpanda-labs/bitpanda-mcp bitpanda-mcp
+  official: true
+  kind: mcp-server
+- language: shell
+  registry: git
+  name: bitpanda-agent-skill
+  url: https://github.com/bitpanda-labs/agent-skills
+  install: clone github.com/bitpanda-labs/agent-skills; requires curl + jq
+  official: true
+  kind: agent-skill
+- language: python
+  registry: pypi
+  name: bitpanda-aio
+  url: https://pypi.org/project/bitpanda-aio/
+  install: pip install bitpanda-aio
+  official: false
+  kind: community-sdk

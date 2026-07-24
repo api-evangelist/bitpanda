@@ -1,0 +1,28 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://api.bitpanda.com/v1",
+      "service-desc": [
+        {
+          "href": "https://developers.bitpanda.com/",
+          "type": "text/html",
+          "title": "Bitpanda Public API Documentation"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://developers.bitpanda.com/",
+          "type": "text/html",
+          "title": "Bitpanda Public API Documentation"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://status.bitpanda.com/",
+          "type": "text/html",
+          "title": "Bitpanda Status"
+        }
+      ]
+    }
+  ]
+}

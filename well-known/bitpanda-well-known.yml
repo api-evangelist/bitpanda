@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of /.well-known/ on Bitpanda hosts
+host: https://bitpanda.com
+documents:
+- path: /.well-known/api-catalog
+  status: 200
+  file: bitpanda-api-catalog.json
+  note: RFC 9727 API catalog linkset pointing at api.bitpanda.com/v1, docs, and status page
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+notes: >-
+  developer.bitpanda.com and api.bitpanda.com return 401 for all /.well-known/ paths (auth-gated
+  API host). developers.bitpanda.com returns HTTP 200 HTML for every /.well-known/ path (a
+  catch-all docs SPA, not real discovery documents) and was therefore not indexed.

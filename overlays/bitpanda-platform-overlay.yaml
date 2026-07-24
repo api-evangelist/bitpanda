@@ -1,0 +1,33 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Bitpanda Platform API
+  version: 1.0.0
+extends: openapi/bitpanda-platform-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-07-18'
+    x-apievangelist-source: github.com/bitpanda-labs/agent-skills api_reference.md
+    x-mcp-server: https://github.com/bitpanda-labs/bitpanda-mcp
+    x-agent-skill: https://github.com/bitpanda-labs/agent-skills
+    x-cli: https://github.com/bitpanda-labs/bitpanda-cli
+- target: $.info
+  update:
+    x-access-model: read-only
+    x-pagination: cursor
+    x-status-page: https://status.bitpanda.com
+- target: $.paths['/v1/wallets/'].get
+  update:
+    x-agentic-access:
+      action-class: read
+      consequence: read
+- target: $.paths['/v1/transactions'].get
+  update:
+    x-agentic-access:
+      action-class: read
+      consequence: read
+- target: $.paths['/v1/ticker'].get
+  update:
+    x-agentic-access:
+      action-class: read
+      consequence: connected

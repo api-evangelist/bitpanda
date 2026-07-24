@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.bitpanda.com/en/security, https://developers.bitpanda.com/platform/
+standards:
+- id: soc2
+  conforms: true
+  evidence: SOC 2 listed on bitpanda.com/en/security (see security/bitpanda-trust-center.yml)
+- id: iso-27001
+  conforms: true
+  evidence: ISO 27001 listed on bitpanda.com/en/security
+- id: gdpr
+  conforms: true
+  evidence: GDPR / EU data protection posture published; Bitpanda Group Privacy Notice
+- id: mifid2
+  conforms: true
+  evidence: >-
+    Bitpanda operates as a regulated EU broker (Bitpanda GmbH / Bitpanda Asset Management) under
+    MiFID II; stocks & ETFs offered as bitpanda-issued derivative contracts.
+- id: api-key-auth
+  conforms: true
+  evidence: openapi securityScheme apiKey (X-Api-Key header)
+- id: cursor-pagination
+  conforms: true
+  evidence: all list endpoints use cursor pagination (before/after/cursor)
+- id: oauth2
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors use plain HTTP status codes, not application/problem+json
+- id: asyncapi-events
+  conforms: false
+  evidence: Platform API is request/response only; no documented webhook/event surface
+compliance_program:
+  published: true
+  url: https://www.bitpanda.com/en/security
+  certifications:
+  - SOC 2
+  - ISO 27001
+  - GDPR

@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/bitpanda-labs/bitpanda-cli
+official: true
+name: bitpanda-cli
+binary: bp
+description: >-
+  Official Bitpanda command-line tool (bp) for the Bitpanda Developer/Platform API. View your
+  portfolio, check prices, and browse trades and transactions from the terminal. Written in Go,
+  Apache-2.0, maintained by Bitpanda Labs.
+repo: https://github.com/bitpanda-labs/bitpanda-cli
+docs: https://developers.bitpanda.com/platform/
+install:
+- method: homebrew
+  command: brew install bitpanda-labs/tap/bp
+- method: shell
+  command: curl -fsSL https://raw.githubusercontent.com/bitpanda-labs/bitpanda-cli/main/install.sh | sh
+- method: go
+  command: go install github.com/bitpanda-labs/bitpanda-cli/cmd/bp@latest
+- method: deb
+  note: Download bp_*_linux_amd64.deb from the latest GitHub release, then dpkg -i
+- method: rpm
+  note: Download bp_*_linux_amd64.rpm from the latest GitHub release, then rpm -i
+auth:
+  flag: --api-key
+  env: BITPANDA_API_KEY
+  config_file: ~/.config/bitpanda/config.yaml
+  api_key_url: https://web.bitpanda.com/my-account/apikey
+commands:
+- name: portfolio
+  description: Aggregated holdings with EUR valuations (--sort value, -o json)
+- name: balances
+  description: Wallet list (--non-zero, --asset-id, --limit)
+- name: trades
+  description: Buy/sell history (--all, --operation, --asset-type, --from, --to, --limit)
+- name: transactions
+  description: Transaction history (--all, --flow, --wallet-id, --from, --to, -o csv)
+- name: price
+  description: Price for a single asset symbol
+- name: prices
+  description: Prices for held assets (--all for everything)
+- name: asset
+  description: Asset info by asset ID
+output_formats:
+- table
+- json
+- csv

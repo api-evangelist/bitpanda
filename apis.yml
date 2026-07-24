@@ -1,7 +1,16 @@
 aid: bitpanda
 name: Bitpanda
-description: Bitpanda is a company surfaced as a portfolio company of speedinvest and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Bitpanda is a European retail investment platform, founded in Vienna in 2014, that lets
+  users buy, sell, and hold cryptocurrencies, stocks, ETFs, precious metals, commodities, and
+  crypto indices from a single account. Its developer surface centres on the read-only Bitpanda
+  Platform API (developer.bitpanda.com) for portfolio, wallet balances, transactions, asset
+  metadata, and live ticker prices, authenticated with an X-Api-Key header and cursor-based
+  pagination, and on Bitpanda Fusion, the automated-trading product offering programmatic order
+  execution across aggregated liquidity. Bitpanda Labs maintains an official MCP server, an
+  Agent Skill, and a Go CLI (bp) as first-party ways for developers and AI agents to reach the
+  API. This profile was surfaced as a portfolio company of Speedinvest and enriched by the API
+  Evangelist pipeline from Bitpanda's public developer surface.
 url: https://raw.githubusercontent.com/api-evangelist/bitpanda/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +18,152 @@ x-backed-by:
 - speedinvest
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://logo.clearbit.com/bitpanda.com
 tags:
 - Company
-apis: []
+- Cryptocurrency
+- Fintech
+- Trading
+- Investing
+- Stocks
+- ETFs
+- Precious Metals
+- Portfolio
+- Market Data
+- MCP
+- Agent Skills
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: bitpanda:bitpanda-assets-api
+  name: Bitpanda assets API
+  description: Asset metadata lookup
+  humanURL: https://developers.bitpanda.com/platform/
+  baseURL: https://developer.bitpanda.com
+  tags:
+  - assets
+  properties:
+  - type: OpenAPI
+    url: openapi/bitpanda-assets-api-openapi.yml
+  - type: Authentication
+    url: authentication/bitpanda-authentication.yml
+- aid: bitpanda:bitpanda-market-data-api
+  name: Bitpanda market-data API
+  description: Live ticker prices
+  humanURL: https://developers.bitpanda.com/platform/
+  baseURL: https://developer.bitpanda.com
+  tags:
+  - market-data
+  properties:
+  - type: OpenAPI
+    url: openapi/bitpanda-market-data-api-openapi.yml
+  - type: Authentication
+    url: authentication/bitpanda-authentication.yml
+- aid: bitpanda:bitpanda-transactions-api
+  name: Bitpanda transactions API
+  description: Transaction history across all asset types
+  humanURL: https://developers.bitpanda.com/platform/
+  baseURL: https://developer.bitpanda.com
+  tags:
+  - transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/bitpanda-transactions-api-openapi.yml
+  - type: Authentication
+    url: authentication/bitpanda-authentication.yml
+- aid: bitpanda:bitpanda-wallets-api
+  name: Bitpanda wallets API
+  description: Wallet balances across all asset types
+  humanURL: https://developers.bitpanda.com/platform/
+  baseURL: https://developer.bitpanda.com
+  tags:
+  - wallets
+  properties:
+  - type: OpenAPI
+    url: openapi/bitpanda-wallets-api-openapi.yml
+  - type: Authentication
+    url: authentication/bitpanda-authentication.yml
 common:
+- type: TrustCenter
+  url: security/bitpanda-trust-center.yml
+- type: Compliance
+  url: https://www.bitpanda.com/en/security
 - type: Website
   url: https://bitpanda.com
+- type: DeveloperPortal
+  url: https://developers.bitpanda.com/
+- type: Documentation
+  url: https://developers.bitpanda.com/platform/
+- type: APIReference
+  url: https://developers.bitpanda.com/platform/
+- type: GettingStarted
+  url: https://developers.bitpanda.com/platform/
+- type: GitHubOrganization
+  url: https://github.com/bitpanda-labs
+- type: Blog
+  url: https://blog.bitpanda.com/en
+- type: Support
+  url: https://support.bitpanda.com/
+- type: Pricing
+  url: https://support.bitpanda.com/hc/en-us/articles/16259273206044-Bitpanda-s-fees-and-premiums-explained
+- type: SignUp
+  url: https://web.bitpanda.com/
+- type: Login
+  url: https://web.bitpanda.com/my-account/apikey
+- type: TermsOfService
+  url: https://www.bitpanda.com/en/legal/bitpanda-group-general-terms-conditions
+- type: PrivacyPolicy
+  url: https://www.bitpanda.com/en/legal/bitpanda-group-privacy-notice
+- type: StatusPage
+  url: https://status.bitpanda.com
+- type: Deprecation
+  url: lifecycle/bitpanda-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/bitpanda-lifecycle.yml
+- type: MCPServer
+  url: mcp/bitpanda-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: CLI
+  url: cli/bitpanda-cli.yml
+- type: Packages
+  url: packages/bitpanda-packages.yml
+- type: Authentication
+  url: authentication/bitpanda-authentication.yml
+- type: Conventions
+  url: conventions/bitpanda-conventions.yml
+- type: ErrorCatalog
+  url: errors/bitpanda-problem-types.yml
+- type: DataModel
+  url: data-model/bitpanda-data-model.yml
+- type: Conformance
+  url: conformance/bitpanda-conformance.yml
+- type: DomainSecurity
+  url: security/bitpanda-domain-security.yml
+- type: WellKnown
+  url: well-known/bitpanda-well-known.yml
+- type: LLMsTxt
+  url: llms/bitpanda-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

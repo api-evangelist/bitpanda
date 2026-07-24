@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/bitpanda-platform-openapi.yml, developers.bitpanda.com/platform/
+format: http-status
+note: >-
+  The Bitpanda Platform API signals errors with standard HTTP status codes and a JSON body; it
+  does not publish an RFC 9457 application/problem+json catalog. Derived from documented
+  responses across the Platform API operations.
+problems:
+- status: 401
+  title: Invalid credentials
+  detail: The X-Api-Key header is missing, malformed, or the API key is invalid/revoked.
+  remediation: Generate or check your key at https://web.bitpanda.com/my-account/apikey and send it in the X-Api-Key header.
+  applies_to:
+  - listWallets
+  - listTransactions
+  - getAsset
+  - getTicker
+- status: 404
+  title: Resource not found
+  detail: The requested asset (or path) does not exist.
+  remediation: Verify the asset_id UUID via GET /v1/ticker or GET /v1/wallets.
+  applies_to:
+  - getAsset
+- status: 500
+  title: Internal server error
+  detail: An unexpected error occurred on the Bitpanda side.
+  remediation: Retry with backoff; check https://status.bitpanda.com for incidents.
+  applies_to:
+  - listWallets
+  - listTransactions
+  - getAsset
+  - getTicker

@@ -1,0 +1,70 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://github.com/bitpanda-labs/bitpanda-mcp
+official: true
+server:
+  name: bitpanda
+  description: >-
+    Official Bitpanda MCP server maintained by Bitpanda Labs. Connects MCP-compatible AI clients
+    (Claude, Cursor, VS Code Copilot, Windsurf) to the Bitpanda Platform API for secure,
+    read-only access to portfolio, wallet balances, trade/transaction history, and live market
+    prices. Built with FastMCP 3.x, Python 3.11+.
+  repo: https://github.com/bitpanda-labs/bitpanda-mcp
+  license: Apache-2.0
+  language: Python
+  transports:
+  - stdio
+  - streamable-http
+  install:
+    stdio: uvx --from git+https://github.com/bitpanda-labs/bitpanda-mcp bitpanda-mcp
+    claude_code: claude mcp add bitpanda -e BITPANDA_API_KEY=your-key -- uvx --from git+https://github.com/bitpanda-labs/bitpanda-mcp bitpanda-mcp
+    http: FASTMCP_TRANSPORT=streamable-http uv run bitpanda-mcp
+  http:
+    default_url: http://localhost:8000/mcp
+    auth_header: X-Api-Key
+    health: GET /healthz
+  auth:
+    env: BITPANDA_API_KEY
+    http_header: X-Api-Key
+    api_key_url: https://web.bitpanda.com/my-account/apikey
+  base_url: https://developer.bitpanda.com
+  read_only: true
+tools:
+- name: get_portfolio
+  category: portfolio
+  description: Aggregated portfolio view across all assets with EUR valuations and sort/sort_by
+  source_operation: openapi/bitpanda-platform-openapi.yml#listWallets
+- name: get_price
+  category: market-data
+  description: Current ticker price and currency for any asset by symbol (BTC, ETH, SOL, ...)
+  source_operation: openapi/bitpanda-platform-openapi.yml#getTicker
+- name: list_prices
+  category: market-data
+  description: Ticker prices for held assets, or a capped market-wide list with all=true and limit
+  source_operation: openapi/bitpanda-platform-openapi.yml#getTicker
+- name: get_asset
+  category: market-data
+  description: Asset metadata by asset UUID
+  source_operation: openapi/bitpanda-platform-openapi.yml#getAsset
+- name: list_wallets
+  category: wallets
+  description: All Bitpanda asset wallet balances, with non_zero, asset_id, page_size, limit filters
+  source_operation: openapi/bitpanda-platform-openapi.yml#listWallets
+- name: list_transactions
+  category: transactions
+  description: Raw asset transaction history with wallet_id, flow, asset_id, date filters, all=true
+  source_operation: openapi/bitpanda-platform-openapi.yml#listTransactions
+- name: list_trades
+  category: trades
+  description: Normalized buy/sell activity derived from transactions with operation/trade_type, asset_type, date filters
+  source_operation: openapi/bitpanda-platform-openapi.yml#listTransactions
+prompts:
+- name: portfolio_summary
+  description: Analyze portfolio composition and identify concentration risk
+- name: recent_activity
+  description: Summarize recent trades and asset transactions
+notes: >-
+  All tools are read-only (readOnlyHint=true); the server never writes to or modifies the
+  account. HTTP mode is stateless and horizontally scalable — each client authenticates
+  per-request with its own key in the X-Api-Key header.

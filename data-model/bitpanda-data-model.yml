@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/bitpanda-platform-openapi.yml, github.com/bitpanda-labs/agent-skills api_reference.md
+entities:
+- name: Asset
+  id: id (uuid)
+  fields: [id, name, symbol, type, currency]
+  note: Reference entity for all crypto/fiat/stock/ETF/metal/commodity/index assets.
+- name: Wallet
+  id: wallet_id (uuid)
+  fields: [wallet_id, asset_id, wallet_type, index_asset_id, last_credited_at, balance]
+  note: "wallet_type is one of STAKING, CRYPTO_INDEX, or null (regular)."
+- name: Transaction
+  id: transaction_id (uuid)
+  fields: [transaction_id, operation_id, asset_id, account_id, wallet_id, asset_amount, fee_amount, operation_type, transaction_type, flow, credited_at, compensates, trade_id]
+  note: "flow is incoming|outgoing; operation_type covers buy/sell/deposit/withdrawal/transfer/staking."
+- name: Ticker
+  id: id (uuid, = asset id)
+  fields: [id, symbol, type, currency, price, price_change_day]
+relationships:
+- from: Wallet
+  to: Asset
+  type: belongs_to
+  via: asset_id
+- from: Wallet
+  to: Asset
+  type: belongs_to
+  via: index_asset_id
+  note: Only set for CRYPTO_INDEX wallets.
+- from: Transaction
+  to: Wallet
+  type: belongs_to
+  via: wallet_id
+- from: Transaction
+  to: Asset
+  type: belongs_to
+  via: asset_id
+- from: Transaction
+  to: Transaction
+  type: has_one
+  via: compensates
+  note: Links a correction/reversal to the original transaction.
+- from: Ticker
+  to: Asset
+  type: belongs_to
+  via: id
+id_conventions:
+  format: UUID v4 for asset_id, wallet_id, transaction_id, operation_id, account_id

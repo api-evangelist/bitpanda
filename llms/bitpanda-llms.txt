@@ -1,0 +1,35 @@
+# Bitpanda
+
+> Bitpanda is a European retail investment platform (Vienna, 2014) for buying, selling, and holding cryptocurrencies, stocks, ETFs, precious metals, commodities, and crypto indices from one account. Its read-only Bitpanda Platform API exposes portfolio, wallet balances, transactions, asset metadata, and live ticker prices, authenticated with an X-Api-Key header and cursor pagination. Bitpanda Labs ships an official MCP server, an Agent Skill, and a Go CLI.
+
+## APIs
+- [Bitpanda Platform API](https://developers.bitpanda.com/platform/): Read-only account + market-data API (base https://developer.bitpanda.com)
+
+## Specs
+- [OpenAPI (Platform API)](openapi/bitpanda-platform-openapi.yml): listWallets, listTransactions, getAsset, getTicker
+- [OpenAPI Overlay](overlays/bitpanda-platform-overlay.yaml): API Evangelist enhancements
+
+## Agent & tooling
+- [MCP server (official)](mcp/bitpanda-mcp.yml): github.com/bitpanda-labs/bitpanda-mcp — read-only portfolio/market tools
+- [Agent Skill (official)](skills/bitpanda-account.md): github.com/bitpanda-labs/agent-skills
+- [CLI (official, `bp`)](cli/bitpanda-cli.yml): github.com/bitpanda-labs/bitpanda-cli
+- [Packages](packages/bitpanda-packages.yml)
+
+## Semantics
+- [Authentication](authentication/bitpanda-authentication.yml): X-Api-Key header
+- [Conventions](conventions/bitpanda-conventions.yml): cursor pagination, read-only, uri-path versioning
+- [Errors](errors/bitpanda-problem-types.yml): HTTP status codes (401/404/500)
+- [Data model](data-model/bitpanda-data-model.yml): Asset, Wallet, Transaction, Ticker
+- [Lifecycle](lifecycle/bitpanda-lifecycle.yml): v1, status page
+
+## Security
+- [Domain security](security/bitpanda-domain-security.yml)
+- [Trust center](security/bitpanda-trust-center.yml): SOC 2, ISO 27001, GDPR
+- [Conformance](conformance/bitpanda-conformance.yml)
+
+## Docs
+- [Developer portal](https://developers.bitpanda.com/)
+- [Get an API key](https://web.bitpanda.com/my-account/apikey)
+- [Status](https://status.bitpanda.com)
+- [Blog](https://blog.bitpanda.com/en)
+- [GitHub (Bitpanda Labs)](https://github.com/bitpanda-labs)
