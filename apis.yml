@@ -102,6 +102,8 @@ apis:
   - type: Authentication
     url: authentication/bitpanda-authentication.yml
 common:
+- type: Overlay
+  url: overlays/bitpanda-platform-overlay.yaml
 - type: TrustCenter
   url: security/bitpanda-trust-center.yml
 - type: Compliance
