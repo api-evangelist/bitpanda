@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bitpanda Platform assets transactions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.bitpanda.com/v1/transactions",
+            "params": [
+              {
+                "name": "wallet_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by wallet ID"
+              },
+              {
+                "name": "flow",
+                "value": "",
+                "type": "query",
+                "description": "Filter by flow direction"
+              },
+              {
+                "name": "asset_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by asset ID (repeatable)"
+              },
+              {
+                "name": "from_including",
+                "value": "",
+                "type": "query",
+                "description": "Transactions credited at >= date"
+              },
+              {
+                "name": "to_excluding",
+                "value": "",
+                "type": "query",
+                "description": "Transactions credited at < date"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Return page before cursor"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Return page after cursor"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "List all user transactions across all asset types, newest first. Cursor paginated."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,249 @@
+{
+  "item": [
+    {
+      "id": "1c28e8e6-9113-46a9-b438-6c5404f53a3e",
+      "name": "market-data",
+      "description": {
+        "content": "Live ticker prices",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "37199c7d-54d6-4b75-abf8-82f95f53aef7",
+          "name": "Get ticker prices",
+          "request": {
+            "name": "Get ticker prices",
+            "description": {
+              "content": "Returns current prices for all available assets. Cursor paginated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "ticker"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Items per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Cursor for next page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7644f7df-172d-42b7-9aea-dfb6a331bec4",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ticker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"3e70ccc7-e7b8-dc31-845c-a50fc94aab7c\",\n      \"symbol\": \"BTC\",\n      \"type\": \"cryptocoin\",\n      \"currency\": \"EUR\",\n      \"price\": \"95000.00000000\",\n      \"price_change_day\": \"1.33\"\n    },\n    {\n      \"id\": \"9a9faf75-c4b7-35a5-acce-ab76a18ba8af\",\n      \"symbol\": \"BTC\",\n      \"type\": \"cryptocoin\",\n      \"currency\": \"EUR\",\n      \"price\": \"95000.00000000\",\n      \"price_change_day\": \"1.33\"\n    }\n  ],\n  \"next_cursor\": \"string\",\n  \"has_next_page\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68cdc980-ffa7-492a-85a1-bab0b7b90df9",
+              "name": "Invalid credentials / access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ticker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5761a503-5d03-4d3d-aa6a-5cb12233b6ec",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "ticker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.bitpanda.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e14ccc0f-4937-4c35-9ff6-196bedcb0296",
+    "name": "Bitpanda Platform assets market-data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Read-only Bitpanda Developer (Platform) API for querying a Bitpanda account: wallet balances, transactions, asset metadata, and live ticker prices across all asset types (crypto, fiat, stocks, ETFs, metals, indices). Generated by the API Evangelist enrichment pipeline from Bitpanda Labs' first-party API reference (github.com/bitpanda-labs/agent-skills). Authentication is via an X-Api-Key header; pagination is cursor-based.\n\nContact Support:\n Name: Bitpanda Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

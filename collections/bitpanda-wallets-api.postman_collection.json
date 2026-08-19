@@ -1,0 +1,343 @@
+{
+  "item": [
+    {
+      "id": "df584219-9be3-45d6-afe1-cae2e6496848",
+      "name": "wallets",
+      "description": {
+        "content": "Wallet balances across all asset types",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "695b722a-b456-4a9b-9774-47a471b3e01d",
+          "name": "List wallets (balances)",
+          "request": {
+            "name": "List wallets (balances)",
+            "description": {
+              "content": "List all user wallets (balances) across all asset types. Cursor paginated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "wallets",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "asset_id",
+                  "value": "<uuid>",
+                  "description": "Filter by asset ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "index_asset_id",
+                  "value": "<uuid>",
+                  "description": "Filter by index asset ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "last_credited_at_from_including",
+                  "value": "<dateTime>",
+                  "description": "Wallets credited at >= date"
+                },
+                {
+                  "disabled": false,
+                  "key": "last_credited_at_to_excluding",
+                  "value": "<dateTime>",
+                  "description": "Wallets credited at < date"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "Return page before cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "Return page after cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "Items per page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d8d1a31-e4b4-43ad-8eb4-16abb5e81f74",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "wallets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "index_asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "last_credited_at_from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "last_credited_at_to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"start_cursor\": \"string\",\n  \"end_cursor\": \"string\",\n  \"has_previous_page\": false,\n  \"has_next_page\": false,\n  \"page_size\": 25,\n  \"data\": [\n    {\n      \"wallet_id\": \"3f513762-9f7a-aff4-244c-2176a7157a58\",\n      \"asset_id\": \"db45b2a3-a435-9ca1-f67d-436c7fb61561\",\n      \"wallet_type\": \"STAKING\",\n      \"index_asset_id\": \"03164670-69bb-5846-a947-30d7b9fa7e01\",\n      \"last_credited_at\": \"2017-06-04T09:27:34.040Z\",\n      \"balance\": 1.23456789\n    },\n    {\n      \"wallet_id\": \"79d07be3-dad9-33ed-04f0-7e87bd69b5b4\",\n      \"asset_id\": \"9e7655b3-d7a2-94af-f771-4aed717bd9e2\",\n      \"wallet_type\": \"null\",\n      \"index_asset_id\": \"5b4b4a9b-d64c-6776-1315-3604a76d9ce6\",\n      \"last_credited_at\": \"2008-06-14T12:48:44.898Z\",\n      \"balance\": 1.23456789\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1cabd1b2-7dec-4c0c-acea-a5b55eeec798",
+              "name": "Invalid credentials / access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "wallets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "index_asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "last_credited_at_from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "last_credited_at_to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e0840db-89d7-4e34-a392-cf6b5229f505",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "wallets",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "index_asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "last_credited_at_from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "last_credited_at_to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.bitpanda.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c28a4e1a-94a9-4924-9d69-626130de148d",
+    "name": "Bitpanda Platform assets wallets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Read-only Bitpanda Developer (Platform) API for querying a Bitpanda account: wallet balances, transactions, asset metadata, and live ticker prices across all asset types (crypto, fiat, stocks, ETFs, metals, indices). Generated by the API Evangelist enrichment pipeline from Bitpanda Labs' first-party API reference (github.com/bitpanda-labs/agent-skills). Authentication is via an X-Api-Key header; pagination is cursor-based.\n\nContact Support:\n Name: Bitpanda Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

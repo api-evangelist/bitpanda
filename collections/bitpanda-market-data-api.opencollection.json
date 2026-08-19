@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bitpanda Platform assets market-data API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "market-data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get ticker prices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.bitpanda.com/v1/ticker",
+            "params": [
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for next page"
+              }
+            ]
+          },
+          "docs": "Returns current prices for all available assets. Cursor paginated."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

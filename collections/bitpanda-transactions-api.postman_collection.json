@@ -1,0 +1,375 @@
+{
+  "item": [
+    {
+      "id": "43d4b43e-4184-449f-974b-f92f0848643d",
+      "name": "transactions",
+      "description": {
+        "content": "Transaction history across all asset types",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b85c4fe9-7798-4c66-bc90-5d1ab3435c20",
+          "name": "List transactions",
+          "request": {
+            "name": "List transactions",
+            "description": {
+              "content": "List all user transactions across all asset types, newest first. Cursor paginated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "wallet_id",
+                  "value": "<uuid>",
+                  "description": "Filter by wallet ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "flow",
+                  "value": "<string>",
+                  "description": "Filter by flow direction"
+                },
+                {
+                  "disabled": false,
+                  "key": "asset_id",
+                  "value": "<uuid>",
+                  "description": "Filter by asset ID (repeatable)"
+                },
+                {
+                  "disabled": false,
+                  "key": "asset_id",
+                  "value": "<uuid>",
+                  "description": "Filter by asset ID (repeatable)"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_including",
+                  "value": "<dateTime>",
+                  "description": "Transactions credited at >= date"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_excluding",
+                  "value": "<dateTime>",
+                  "description": "Transactions credited at < date"
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "Return page before cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "Return page after cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "25",
+                  "description": "Items per page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3fad29f5-739c-4a85-979c-b542fd511946",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wallet_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "flow",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"start_cursor\": \"string\",\n  \"end_cursor\": \"string\",\n  \"has_previous_page\": true,\n  \"has_next_page\": true,\n  \"page_size\": 25,\n  \"data\": [\n    {\n      \"transaction_id\": \"63163064-e5e2-c891-11b3-0cb4c8c68236\",\n      \"operation_id\": \"972804cf-bad5-3426-fcd5-aae29be725d1\",\n      \"asset_id\": \"84223211-23ba-67d8-0064-0de5016af342\",\n      \"account_id\": \"5fb42f34-b0eb-63d9-bd19-6c528f4ff6d0\",\n      \"wallet_id\": \"a2ac7f6c-1bb3-c9fb-2b08-50ea11b245c9\",\n      \"asset_amount\": 0.5,\n      \"fee_amount\": 0.001,\n      \"operation_type\": \"string\",\n      \"transaction_type\": \"string\",\n      \"flow\": \"outgoing\",\n      \"credited_at\": \"1956-03-18T05:30:39.172Z\",\n      \"compensates\": \"7a2e2837-bf32-e776-82be-904aa392fdcb\",\n      \"trade_id\": \"0b7c066e-ca4d-ee54-61f1-f973454551a4\"\n    },\n    {\n      \"transaction_id\": \"8a4ba00c-2d52-f602-9f7e-e82291f603fb\",\n      \"operation_id\": \"73368c7e-288b-3776-6cb7-aa18adac1264\",\n      \"asset_id\": \"c4084d9c-f0dd-d535-cac2-006698a37d8e\",\n      \"account_id\": \"13e5609b-3bfb-1fdc-96a8-60ecbbe9d857\",\n      \"wallet_id\": \"68057f93-1c55-f897-799e-4a03acad71b4\",\n      \"asset_amount\": 0.5,\n      \"fee_amount\": 0.001,\n      \"operation_type\": \"string\",\n      \"transaction_type\": \"string\",\n      \"flow\": \"incoming\",\n      \"credited_at\": \"1991-05-28T22:02:27.328Z\",\n      \"compensates\": \"1ee10549-09fb-9498-12eb-aa0e70267037\",\n      \"trade_id\": \"d6edcfa8-2a66-f3d2-8815-0d3b9c229f54\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3ebe050-f808-4b6b-8c60-864107e36583",
+              "name": "Invalid credentials / access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wallet_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "flow",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b644321d-dd88-4c11-a402-911b9f38589b",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wallet_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "flow",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "asset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "from_including",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_excluding",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://developer.bitpanda.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cfa5a6fc-bc4b-4975-b7c4-95391a871b34",
+    "name": "Bitpanda Platform assets transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Read-only Bitpanda Developer (Platform) API for querying a Bitpanda account: wallet balances, transactions, asset metadata, and live ticker prices across all asset types (crypto, fiat, stocks, ETFs, metals, indices). Generated by the API Evangelist enrichment pipeline from Bitpanda Labs' first-party API reference (github.com/bitpanda-labs/agent-skills). Authentication is via an X-Api-Key header; pagination is cursor-based.\n\nContact Support:\n Name: Bitpanda Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

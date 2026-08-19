@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bitpanda Platform assets wallets API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Key",
+      "value": "{{X-Api-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wallets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List wallets (balances)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.bitpanda.com/v1/wallets/",
+            "params": [
+              {
+                "name": "asset_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by asset ID"
+              },
+              {
+                "name": "index_asset_id",
+                "value": "",
+                "type": "query",
+                "description": "Filter by index asset ID"
+              },
+              {
+                "name": "last_credited_at_from_including",
+                "value": "",
+                "type": "query",
+                "description": "Wallets credited at >= date"
+              },
+              {
+                "name": "last_credited_at_to_excluding",
+                "value": "",
+                "type": "query",
+                "description": "Wallets credited at < date"
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "Return page before cursor"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "Return page after cursor"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              }
+            ]
+          },
+          "docs": "List all user wallets (balances) across all asset types. Cursor paginated."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
