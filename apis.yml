@@ -59,6 +59,8 @@ apis:
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
   tags:
+  - Assets
+  tags_raw:
   - assets
   properties:
   - type: OpenAPI
@@ -71,6 +73,8 @@ apis:
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
   tags:
+  - Market Data
+  tags_raw:
   - market-data
   properties:
   - type: OpenAPI
@@ -83,6 +87,8 @@ apis:
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
   tags:
+  - Transaction
+  tags_raw:
   - transactions
   properties:
   - type: OpenAPI
@@ -95,6 +101,8 @@ apis:
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
   tags:
+  - Wallets
+  tags_raw:
   - wallets
   properties:
   - type: OpenAPI
