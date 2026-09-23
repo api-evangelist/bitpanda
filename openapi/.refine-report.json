@@ -1,10 +1,7 @@
 {
   "provider": "bitpanda",
   "sources": [
-    "bitpanda-assets-api-openapi.yml",
-    "bitpanda-market-data-api-openapi.yml",
-    "bitpanda-transactions-api-openapi.yml",
-    "bitpanda-wallets-api-openapi.yml"
+    "_original/bitpanda-platform-openapi.yml"
   ],
   "outputs": [
     "bitpanda-assets-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bitpanda-platform-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bitpanda-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bitpanda-market-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bitpanda-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bitpanda-wallets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
