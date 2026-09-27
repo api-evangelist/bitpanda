@@ -53,6 +53,11 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
+  responses:
+    ServerError:
+      description: Internal server error
+    Unauthorized:
+      description: Invalid credentials / access token
   schemas:
     TickerPage:
       type: object
@@ -86,11 +91,6 @@ components:
         price_change_day:
           type: string
           example: '1.33'
-  responses:
-    ServerError:
-      description: Internal server error
-    Unauthorized:
-      description: Invalid credentials / access token
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

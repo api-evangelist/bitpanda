@@ -70,7 +70,7 @@ maintainers:
   email: info@apis.io
 apis:
 - aid: bitpanda:bitpanda-assets-api
-  name: Bitpanda assets API
+  name: Bitpanda Assets API
   description: Asset metadata lookup
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
@@ -84,7 +84,7 @@ apis:
   - type: Authentication
     url: authentication/bitpanda-authentication.yml
 - aid: bitpanda:bitpanda-market-data-api
-  name: Bitpanda market-data API
+  name: Bitpanda Market Data API
   description: Live ticker prices
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
@@ -98,7 +98,7 @@ apis:
   - type: Authentication
     url: authentication/bitpanda-authentication.yml
 - aid: bitpanda:bitpanda-transactions-api
-  name: Bitpanda transactions API
+  name: Bitpanda Transactions API
   description: Transaction history across all asset types
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com
@@ -112,7 +112,7 @@ apis:
   - type: Authentication
     url: authentication/bitpanda-authentication.yml
 - aid: bitpanda:bitpanda-wallets-api
-  name: Bitpanda wallets API
+  name: Bitpanda Wallets API
   description: Wallet balances across all asset types
   humanURL: https://developers.bitpanda.com/platform/
   baseURL: https://developer.bitpanda.com

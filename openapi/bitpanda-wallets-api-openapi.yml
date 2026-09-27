@@ -90,6 +90,15 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   schemas:
+    WalletPage:
+      allOf:
+      - $ref: '#/components/schemas/CursorPage'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/Wallet'
     Wallet:
       type: object
       properties:
@@ -118,15 +127,6 @@ components:
         balance:
           type: number
           example: 1.23456789
-    WalletPage:
-      allOf:
-      - $ref: '#/components/schemas/CursorPage'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/Wallet'
     CursorPage:
       type: object
       properties:
