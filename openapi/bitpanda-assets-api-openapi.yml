@@ -53,12 +53,12 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   responses:
+    Unauthorized:
+      description: Invalid credentials / access token
     NotFound:
       description: Resource not found
     ServerError:
       description: Internal server error
-    Unauthorized:
-      description: Invalid credentials / access token
   schemas:
     Asset:
       type: object

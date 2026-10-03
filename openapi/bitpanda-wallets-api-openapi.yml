@@ -90,15 +90,6 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   schemas:
-    WalletPage:
-      allOf:
-      - $ref: '#/components/schemas/CursorPage'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/Wallet'
     Wallet:
       type: object
       properties:
@@ -141,11 +132,20 @@ components:
         page_size:
           type: integer
           example: 25
+    WalletPage:
+      allOf:
+      - $ref: '#/components/schemas/CursorPage'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/Wallet'
   responses:
-    ServerError:
-      description: Internal server error
     Unauthorized:
       description: Invalid credentials / access token
+    ServerError:
+      description: Internal server error
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
