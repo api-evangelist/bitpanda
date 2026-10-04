@@ -89,6 +89,11 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
+  responses:
+    ServerError:
+      description: Internal server error
+    Unauthorized:
+      description: Invalid credentials / access token
   schemas:
     Wallet:
       type: object
@@ -141,11 +146,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Wallet'
-  responses:
-    Unauthorized:
-      description: Invalid credentials / access token
-    ServerError:
-      description: Internal server error
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

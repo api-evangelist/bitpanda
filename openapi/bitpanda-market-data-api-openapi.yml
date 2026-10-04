@@ -54,6 +54,17 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   schemas:
+    TickerPage:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticker'
+        next_cursor:
+          type: string
+        has_next_page:
+          type: boolean
     Ticker:
       type: object
       properties:
@@ -75,17 +86,6 @@ components:
         price_change_day:
           type: string
           example: '1.33'
-    TickerPage:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ticker'
-        next_cursor:
-          type: string
-        has_next_page:
-          type: boolean
   responses:
     Unauthorized:
       description: Invalid credentials / access token

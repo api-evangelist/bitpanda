@@ -52,13 +52,6 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
-  responses:
-    Unauthorized:
-      description: Invalid credentials / access token
-    NotFound:
-      description: Resource not found
-    ServerError:
-      description: Internal server error
   schemas:
     Asset:
       type: object
@@ -72,6 +65,13 @@ components:
         symbol:
           type: string
           example: BTC
+  responses:
+    Unauthorized:
+      description: Invalid credentials / access token
+    NotFound:
+      description: Resource not found
+    ServerError:
+      description: Internal server error
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
