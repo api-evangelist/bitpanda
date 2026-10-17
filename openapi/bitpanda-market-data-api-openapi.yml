@@ -53,18 +53,12 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 components:
+  responses:
+    Unauthorized:
+      description: Invalid credentials / access token
+    ServerError:
+      description: Internal server error
   schemas:
-    TickerPage:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Ticker'
-        next_cursor:
-          type: string
-        has_next_page:
-          type: boolean
     Ticker:
       type: object
       properties:
@@ -86,11 +80,17 @@ components:
         price_change_day:
           type: string
           example: '1.33'
-  responses:
-    Unauthorized:
-      description: Invalid credentials / access token
-    ServerError:
-      description: Internal server error
+    TickerPage:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ticker'
+        next_cursor:
+          type: string
+        has_next_page:
+          type: boolean
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

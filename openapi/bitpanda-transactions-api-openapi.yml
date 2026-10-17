@@ -101,11 +101,34 @@ paths:
           $ref: '#/components/responses/ServerError'
 components:
   responses:
-    ServerError:
-      description: Internal server error
     Unauthorized:
       description: Invalid credentials / access token
+    ServerError:
+      description: Internal server error
   schemas:
+    CursorPage:
+      type: object
+      properties:
+        start_cursor:
+          type: string
+        end_cursor:
+          type: string
+        has_previous_page:
+          type: boolean
+        has_next_page:
+          type: boolean
+        page_size:
+          type: integer
+          example: 25
+    TransactionPage:
+      allOf:
+      - $ref: '#/components/schemas/CursorPage'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/Transaction'
     Transaction:
       type: object
       properties:
@@ -157,29 +180,6 @@ components:
           - 'null'
           format: uuid
           description: Present when the transaction resulted from a trade
-    TransactionPage:
-      allOf:
-      - $ref: '#/components/schemas/CursorPage'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/Transaction'
-    CursorPage:
-      type: object
-      properties:
-        start_cursor:
-          type: string
-        end_cursor:
-          type: string
-        has_previous_page:
-          type: boolean
-        has_next_page:
-          type: boolean
-        page_size:
-          type: integer
-          example: 25
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
