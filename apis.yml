@@ -126,6 +126,8 @@ apis:
   - type: Authentication
     url: authentication/bitpanda-authentication.yml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/bitpanda/overview
 - type: Overlay
   url: overlays/bitpanda-platform-overlay.yaml
 - type: TrustCenter
