@@ -64,6 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bitpanda is a company surfaced as a portfolio company of speedinvest and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Bitpanda is a European retail investment platform, founded in Vienna in 2014, that lets users buy, sell, and hold cryptocurrencies, stocks, ETFs, precious metals, commodities, and crypto indices from a single account. Its developer surface centres on the read-only Bitpanda Platform API (developer.bitpanda.com) for portfolio, wallet balances, transactions, asset metadata, and live ticker prices, authenticated with an X-Api-Key header and cursor-based pagination, and on Bitpanda Fusion, the automated-trading product offering programmatic order execution across aggregated liquidity. Bitpanda Labs maintains an official MCP server, an Agent Skill, and a Go CLI (bp) as first-party ways for developers and AI agents to reach the API. This profile was surfaced as a portfolio company of Speedinvest and enriched by the API Evangelist pipeline from Bitpanda's public developer surface.
 
-Backed by: speedinvest — https://bitpanda.com
+**Areas:** Company · Cryptocurrency · Fintech · Trading · Investing · Stocks · ETFs · Precious Metals · Portfolio · Market Data · MCP · Agent Skills
+
+## Bitpanda on APIs.io
+
+Everything profiled for Bitpanda is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bitpanda/](https://apis.io/providers/bitpanda/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [Bitpanda Assets API](https://apis.io/apis/bitpanda/bitpanda-assets-api/) — Asset metadata lookup
+- [Bitpanda Market Data API](https://apis.io/apis/bitpanda/bitpanda-market-data-api/) — Live ticker prices
+- [Bitpanda Transactions API](https://apis.io/apis/bitpanda/bitpanda-transactions-api/) — Transaction history across all asset types
+- [Bitpanda Wallets API](https://apis.io/apis/bitpanda/bitpanda-wallets-api/) — Wallet balances across all asset types
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bitpanda](https://apis.io/servers/bitpanda/bitpanda/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Bitpanda Platform assets API](https://apis.io/collections/bitpanda/open-bitpanda-assets-api/)
+- [Bitpanda Platform assets market-data API](https://apis.io/collections/bitpanda/open-bitpanda-market-data-api/)
+- [Bitpanda Platform assets transactions API](https://apis.io/collections/bitpanda/open-bitpanda-transactions-api/)
+- [Bitpanda Platform assets wallets API](https://apis.io/collections/bitpanda/open-bitpanda-wallets-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Bitpanda Platform Overlay](https://apis.io/overlays/bitpanda/bitpanda-platform-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bitpanda Authentication](https://apis.io/security/bitpanda/bitpanda-authentication/)
+- [Bitpanda Domain Security](https://apis.io/security/bitpanda/bitpanda-domain-security/)
+- [Bitpanda Trust Center](https://apis.io/security/bitpanda/bitpanda-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bitpanda.com)
+- [Documentation](https://developers.bitpanda.com/platform/)
+- [Getting started](https://developers.bitpanda.com/platform/)
+- [API reference](https://developers.bitpanda.com/platform/)
+- [Pricing](https://support.bitpanda.com/hc/en-us/articles/16259273206044-Bitpanda-s-fees-and-premiums-explained)
+- [Sign up](https://web.bitpanda.com/)
+- [Support](https://support.bitpanda.com/)
+- [Blog](https://blog.bitpanda.com/en)
+- [Compliance](https://www.bitpanda.com/en/security)
+- [Terms of service](https://www.bitpanda.com/en/legal/bitpanda-group-general-terms-conditions)
+- [Privacy policy](https://www.bitpanda.com/en/legal/bitpanda-group-privacy-notice)
+- [GitHub](https://github.com/bitpanda-labs)
+- [Status](https://status.bitpanda.com)
+
+## API Evangelist rating
+
+**Kin Score 45.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 51.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 34.5 |
+| Access clarity | 60.5 |
+
+**Agent readiness 26.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 27.8** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bitpanda/](https://apis.io/providers/bitpanda/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bitpanda: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bitpanda/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
